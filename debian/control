@@ -1,13 +1,15 @@
 Source: libunwind
 Priority: optional
 Section: libs
-Maintainer: Daigo Moriwaki <daigo@debian.org>
-Uploaders: Matthieu Delahaye <matthieu@debian.org>, Al Stone <ahs3@debian.org>
+Maintainer: Pexip AS <packaging@pexip.com>
+XSBC-Pexip-Original-Maintainer: Daigo Moriwaki <daigo@debian.org>
+XSBC-Pexip-Original-Uploaders: Matthieu Delahaye <matthieu@debian.org>, Al Stone <ahs3@debian.org>
 Build-Depends: debhelper (>= 9), autotools-dev, dh-autoreconf, liblzma-dev, texlive-extra-utils
 Standards-Version: 3.9.4
 Homepage: http://www.nongnu.org/libunwind
 Vcs-Git: git://git.debian.org/git/collab-maint/libunwind.git
 Vcs-Browser: http://git.debian.org/?p=collab-maint/libunwind.git
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ jessie
 
 Package: libunwind-dev
 Section: libdevel
