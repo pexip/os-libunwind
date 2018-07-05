@@ -9,7 +9,7 @@ Standards-Version: 3.9.4
 Homepage: http://www.nongnu.org/libunwind
 Vcs-Git: git://git.debian.org/git/collab-maint/libunwind.git
 Vcs-Browser: http://git.debian.org/?p=collab-maint/libunwind.git
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ jessie
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ stretch
 
 Package: libunwind-dev
 Section: libdevel
