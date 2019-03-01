@@ -1,9 +1,17 @@
-01-rpath.patch
 20123007_workaround_test-ptrace.patch
-20130803-known_test_failure_to_XFAIL_TESTS.patch
-20130803-crasher_test_only_for_coredump.patch
 20140507-ppc_lib64.patch
-ppc64el.diff
-AArch64-port.diff
-fix-lzma-linking.patch
-20150704-CVE-2015-3239_dwarf_i.h.patch
+0001-x86_64-Use-sigprocmask-from-signal-frames.patch
+0001-libunwind-arm-fix-build-failure-due-to-asm.patch
+0001-Default-to-enable-debug-frame-also-on-aarch64.patch
+version.patch
+0001-x86_64-Use-ucontext_t-instead-of-struct-ucontext.patch
+0001-Support-dynamic-unwind-info-on-ARM.patch
+0001-arm-Handle-non-signal-frame-unwind-info-lookup-in-AR.patch
+0001-dwarf-Allow-DWARF-version-both-3-and-4-56.patch
+0001-aarch64-Use-__asm__-instead-of-asm-89.patch
+
+# ia64
+libunwind-1.2-coredump-regs.patch
+libunwind-1.2-ia64-missing.patch
+libunwind-1.2-ia64-ptrace-coredump.patch
+libunwind-1.2-ia64-undwarf.patch

@@ -1,0 +1,25 @@
+From 10ff9862c80a6975bd55c74af7047dff70d857d1 Mon Sep 17 00:00:00 2001
+From: Adrian Bunk <bunk@debian.org>
+Date: Sat, 18 Nov 2017 21:41:14 +0200
+Subject: Default to --enable-debug-frame also on aarch64
+
+This is required for perf to show call graphs.
+---
+ configure.ac | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/configure.ac b/configure.ac
+index 57944d9..9f86551 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -248,6 +248,7 @@ AC_ARG_ENABLE(debug_frame,
+ AS_HELP_STRING([--enable-debug-frame],[Load the ".debug_frame" section if available]),, [
+ case "${target_arch}" in
+   (arm) enable_debug_frame=yes;;
++  (aarch64) enable_debug_frame=yes;;
+   (*)   enable_debug_frame=no;;
+ esac])
+ if test x$enable_debug_frame = xyes; then
+-- 
+2.11.0
+
