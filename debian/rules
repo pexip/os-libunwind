@@ -6,6 +6,10 @@
 
 export DEB_BUILD_MAINT_OPTIONS = hardening=-all,+format
 
+ifneq (,$(filter $(DEB_HOST_ARCH), amd64 i386))
+  CXX_EXCEPTIONS=--enable-cxx-exceptions
+endif
+
 %:
 	dh $@
 
@@ -20,7 +24,7 @@ debian/libunwind-setjmp0.%: debian/libunwind-setjmp0.%.in
 	sed 's/@DEB_HOST_MULTIARCH@/$(DEB_HOST_MULTIARCH)/g' $< > $@
 
 override_dh_auto_configure:
-	dh_auto_configure -- --with-pic --enable-cxx-exceptions --includedir=\$${prefix}/include/$(DEB_HOST_MULTIARCH)
+	dh_auto_configure -- --with-pic $(CXX_EXCEPTIONS) --includedir=\$${prefix}/include/$(DEB_HOST_MULTIARCH)
 
 override_dh_install:
 	dh_install

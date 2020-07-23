@@ -9,6 +9,7 @@ version.patch
 0001-arm-Handle-non-signal-frame-unwind-info-lookup-in-AR.patch
 0001-dwarf-Allow-DWARF-version-both-3-and-4-56.patch
 0001-aarch64-Use-__asm__-instead-of-asm-89.patch
+0001-tdep_uc_addr-use-4-offset-for-UNW_MIPS_PC-on-MIPS-be.patch
 
 # ia64
 libunwind-1.2-coredump-regs.patch
