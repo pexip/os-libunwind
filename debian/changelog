@@ -1,3 +1,25 @@
+libunwind (1.2.1-10~deb10u1pexip1) pexip; urgency=medium
+
+  * New upstream release
+
+ -- Steve McIntyre <steve.mcintyre@pexip.com>  Tue, 04 Aug 2020 15:48:33 +0100
+
+libunwind (1.2.1-10~deb10u1) buster; urgency=medium
+
+  * Rebuild on buster.
+
+ -- Adrian Bunk <bunk@debian.org>  Thu, 23 Jul 2020 22:00:53 +0300
+
+libunwind (1.2.1-10) unstable; urgency=high
+
+  * Manually enable C++ exception support only on i386 and amd64,
+    it is known broken on several other architectures.
+    Thanks to Bernhard Übelacker. (Closes: #923962)
+  * Backport upstream fix for segfaults on mips,
+    thanks to Guillaume Tucker. (Closes: #932725)
+
+ -- Adrian Bunk <bunk@debian.org>  Wed, 22 Jul 2020 09:31:48 +0300
+
 libunwind (1.2.1-9pexip2) pexip; urgency=medium
 
   * Rebuild in buster environment
