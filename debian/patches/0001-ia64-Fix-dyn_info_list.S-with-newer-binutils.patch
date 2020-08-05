@@ -1,0 +1,31 @@
+From 0bc2241c6f8e5787f345c588c50d731bf56abc9b Mon Sep 17 00:00:00 2001
+From: Jessica Clarke <jrtc27@jrtc27.com>
+Date: Tue, 28 Jul 2020 15:55:49 +0100
+Subject: ia64: Fix dyn_info_list.S with newer binutils
+
+Using binutils 2.34 or 2.35, libunwind fails to link on ia64 with:
+
+  /usr/bin/ld: .IA_64.unwind has both ordered [`.IA_64.unwind' in unwind/.libs/GetIPInfo.o] and unordered [`.IA_64.unwind' in ia64/.libs/dyn_info_list.o] sections
+
+Fix this by using the right flags and type for the section, taken from
+binutils's gas/testsuite/gas/ia64/unwind.s.
+---
+ src/ia64/dyn_info_list.S | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/ia64/dyn_info_list.S b/src/ia64/dyn_info_list.S
+index 31265f66..125a9efd 100644
+--- a/src/ia64/dyn_info_list.S
++++ b/src/ia64/dyn_info_list.S
+@@ -16,7 +16,7 @@
+ 	string "dyn-list"	/* lsda */
+ 	data8 @gprel(_U_dyn_info_list)
+ 
+-	.section .IA_64.unwind, "a", "progbits"
++	.section .IA_64.unwind, "ao", "unwind"
+ 	data8 0, 0, @segrel(.info)
+ 
+ #endif
+-- 
+2.20.1
+

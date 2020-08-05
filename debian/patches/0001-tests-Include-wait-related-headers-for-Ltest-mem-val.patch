@@ -1,0 +1,27 @@
+From 2be1c2754a2f8dbeeb838fd9e6e1422f912efab7 Mon Sep 17 00:00:00 2001
+From: Alex Arslan <ararslan@comcast.net>
+Date: Thu, 12 Apr 2018 09:46:15 -0700
+Subject: tests: Include wait-related headers for Ltest-mem-validate (#74)
+
+Without these, I was getting errors from this test set claiming that
+wait, WIFCONTINUED, et al. were undefined on FreeBSD 11.1.
+---
+ tests/Ltest-mem-validate.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/tests/Ltest-mem-validate.c b/tests/Ltest-mem-validate.c
+index 1cacb9f0..e5127b90 100644
+--- a/tests/Ltest-mem-validate.c
++++ b/tests/Ltest-mem-validate.c
+@@ -35,6 +35,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+ 
+ #include <sys/resource.h>
+ #include <sys/mman.h>
++#include <sys/types.h>
++#include <sys/wait.h>
+ 
+ #define panic(args...)				\
+ 	{ fprintf (stderr, args); exit (-1); }
+-- 
+2.20.1
+

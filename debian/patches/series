@@ -1,18 +1,14 @@
-20123007_workaround_test-ptrace.patch
 20140507-ppc_lib64.patch
-0001-x86_64-Use-sigprocmask-from-signal-frames.patch
-0001-libunwind-arm-fix-build-failure-due-to-asm.patch
-0001-Default-to-enable-debug-frame-also-on-aarch64.patch
-version.patch
-0001-x86_64-Use-ucontext_t-instead-of-struct-ucontext.patch
-0001-Support-dynamic-unwind-info-on-ARM.patch
-0001-arm-Handle-non-signal-frame-unwind-info-lookup-in-AR.patch
-0001-dwarf-Allow-DWARF-version-both-3-and-4-56.patch
 0001-aarch64-Use-__asm__-instead-of-asm-89.patch
-0001-tdep_uc_addr-use-4-offset-for-UNW_MIPS_PC-on-MIPS-be.patch
+0001-Fix-compilation-with-fno-common.patch
+0001-Link-Ltest-cxx-exceptions-with-libunwind.patch
+0001-tests-Include-wait-related-headers-for-Ltest-mem-val.patch
+0001-fix-compile-issue-on-SH-platform-137.patch
 
 # ia64
 libunwind-1.2-coredump-regs.patch
 libunwind-1.2-ia64-missing.patch
 libunwind-1.2-ia64-ptrace-coredump.patch
-libunwind-1.2-ia64-undwarf.patch
+0001-ia64-Fix-dyn_info_list.S-with-newer-binutils.patch
+0001-Gia64-test-nat.c-include-signal.h-for-sigaction.patch
+0001-Disable-Ltest-init-local-signal-on-ia64.patch

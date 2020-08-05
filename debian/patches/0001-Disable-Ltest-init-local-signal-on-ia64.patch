@@ -1,0 +1,32 @@
+From 572b5debf6de66db0ebd147b8ca0a2f414a52f35 Mon Sep 17 00:00:00 2001
+From: Adrian Bunk <bunk@debian.org>
+Date: Wed, 5 Aug 2020 20:09:10 +0300
+Subject: Disable Ltest-init-local-signal on ia64
+
+---
+ tests/Makefile.am | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tests/Makefile.am b/tests/Makefile.am
+index ed7500ac..8b0ed800 100644
+--- a/tests/Makefile.am
++++ b/tests/Makefile.am
+@@ -33,6 +33,7 @@ if ARCH_IA64
+ 			Gia64-test-readonly Lia64-test-readonly		\
+ 			ia64-test-setjmp ia64-test-sig
+ else #!ARCH_IA64
++ check_PROGRAMS_cdep += Ltest-init-local-signal
+ if ARCH_PPC64
+ if USE_ALTIVEC
+  noinst_PROGRAMS_arch += ppc64-test-altivec
+@@ -49,7 +50,6 @@ endif #!ARCH_IA64
+ 			Gtest-resume-sig Ltest-resume-sig		 \
+ 			Gtest-resume-sig-rt Ltest-resume-sig-rt		 \
+ 			Gtest-trace Ltest-trace				 \
+-			Ltest-init-local-signal				 \
+ 			Ltest-mem-validate				 \
+ 			test-async-sig test-flush-cache test-init-remote \
+ 			test-mem test-reg-state Ltest-varargs		 \
+-- 
+2.20.1
+

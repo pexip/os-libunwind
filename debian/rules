@@ -24,7 +24,7 @@ debian/libunwind-setjmp0.%: debian/libunwind-setjmp0.%.in
 	sed 's/@DEB_HOST_MULTIARCH@/$(DEB_HOST_MULTIARCH)/g' $< > $@
 
 override_dh_auto_configure:
-	dh_auto_configure -- --with-pic $(CXX_EXCEPTIONS) --includedir=\$${prefix}/include/$(DEB_HOST_MULTIARCH)
+	dh_auto_configure -- $(CXX_EXCEPTIONS) --includedir=\$${prefix}/include/$(DEB_HOST_MULTIARCH)
 
 override_dh_install:
 	dh_install
@@ -38,9 +38,6 @@ ifeq ($(DEB_HOST_ARCH), ia64)
 endif
 endif
 
-override_dh_installchangelogs:
-	dh_installchangelogs ChangeLog
-
 override_dh_auto_test:
 ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
 	-$(MAKE) check
@@ -48,6 +45,4 @@ endif # nocheck
 
 override_dh_strip:
 	dh_strip -plibunwind8 -plibunwind-setjmp0 --dbgsym-migration='libunwind8-dbg (<< 1.2.1-1~), libunwind-setjmp0-dbg (<< 1.2.1-1~)'
-
-.PHONY: override_dh_auto_configure override_dh_install override_dh_installchangelogs override_dh_strip
 
