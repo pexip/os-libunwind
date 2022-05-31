@@ -7,7 +7,7 @@ Build-Depends: debhelper (>= 10), liblzma-dev <!pkg.libunwind.nolzma>, texlive-e
 Build-Conflicts: liblzma-dev <pkg.libunwind.nolzma>
 Standards-Version: 4.1.1
 Homepage: http://www.nongnu.org/libunwind
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ buster
+XS-Pexip-Upstream: http://deb.debian.org/debian/ bullseye
 
 Package: libunwind-dev
 Section: libdevel
