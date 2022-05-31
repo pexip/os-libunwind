@@ -51,7 +51,7 @@ typedef struct
 } stack_frame_t;
 
 
-PROTECTED int
+int
 unw_step (unw_cursor_t * cursor)
 {
   struct cursor *c = (struct cursor *) cursor;
@@ -74,7 +74,7 @@ unw_step (unw_cursor_t * cursor)
 
   if (unlikely (ret < 0))
     {
-      if (likely (!unw_is_signal_frame (cursor)))
+      if (likely (unw_is_signal_frame (cursor) <= 0))
         {
           /* DWARF unwinding failed.  As of 09/26/2006, gcc in 64-bit mode
              produces the mandatory level of traceback record in the code, but
@@ -448,7 +448,7 @@ unw_step (unw_cursor_t * cursor)
   {
     unw_word_t ip = c->dwarf.ip;
     unw_addr_space_t as = c->dwarf.as;
-    unw_accessors_t *a = unw_get_accessors (as);
+    unw_accessors_t *a = unw_get_accessors_int (as);
     void *arg = c->dwarf.as_arg;
     uint32_t toc_save = (as->abi == UNW_PPC64_ABI_ELFv2)? 24 : 40;
     int32_t inst;

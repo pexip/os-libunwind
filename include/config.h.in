@@ -33,6 +33,10 @@
    you don't. */
 #undef HAVE_DECL_PTRACE_POKEUSER
 
+/* Define to 1 if you have the declaration of `PTRACE_SETREGSET', and to 0 if
+   you don't. */
+#undef HAVE_DECL_PTRACE_SETREGSET
+
 /* Define to 1 if you have the declaration of `PTRACE_SINGLESTEP', and to 0 if
    you don't. */
 #undef HAVE_DECL_PTRACE_SINGLESTEP
@@ -184,12 +188,8 @@
 /* Define to 1 if __thread keyword is supported by the C compiler. */
 #undef HAVE___THREAD
 
-/* Define to the sub-directory in which libtool stores uninstalled libraries.
-   */
+/* Define to the sub-directory where libtool stores uninstalled libraries. */
 #undef LT_OBJDIR
-
-/* Define to 1 if your C compiler doesn't accept -c and -o together. */
-#undef NO_MINUS_C_MINUS_O
 
 /* Name of package */
 #undef PACKAGE
