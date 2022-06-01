@@ -3,7 +3,7 @@ Priority: optional
 Section: libs
 Maintainer: Pexip AS <packaging@pexip.com>
 XSBC-Pexip-Original-Maintainer: Adrian Bunk <bunk@debian.org>
-Build-Depends: debhelper (>= 10), liblzma-dev <!pkg.libunwind.nolzma>, texlive-extra-utils <!stage1>
+Build-Depends: debhelper-compat (= 10), liblzma-dev <!pkg.libunwind.nolzma>, texlive-extra-utils <!stage1>
 Build-Conflicts: liblzma-dev <pkg.libunwind.nolzma>
 Standards-Version: 4.1.1
 Homepage: http://www.nongnu.org/libunwind

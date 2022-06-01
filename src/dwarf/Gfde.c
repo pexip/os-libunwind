@@ -32,7 +32,7 @@ is_cie_id (unw_word_t val, int is_debug_frame)
      0xffffffffffffffff (for 64-bit ELF).  However, .eh_frame
      uses 0.  */
   if (is_debug_frame)
-    return (val == - (uint32_t) 1 || val == - (uint64_t) 1);
+      return (val == (uint32_t)(-1) || val == (uint64_t)(-1));
   else
     return (val == 0);
 }
@@ -116,10 +116,11 @@ parse_cie (unw_addr_space_t as, unw_accessors_t *a, unw_word_t addr,
   if ((ret = dwarf_readu8 (as, a, &addr, &version, arg)) < 0)
     return ret;
 
-  if (version != 1 && version != DWARF_CIE_VERSION)
+  /* GCC emits version 1??? */
+  if (version != 1 && (version < DWARF_CIE_VERSION || version > DWARF_CIE_VERSION_MAX))
     {
-      Debug (1, "Got CIE version %u, expected version 1 or "
-             STR (DWARF_CIE_VERSION) "\n", version);
+      Debug (1, "Got CIE version %u, expected version 1 or between "
+             STR (DWARF_CIE_VERSION) " and " STR (DWARF_CIE_VERSION_MAX) "\n", version);
       return -UNW_EBADVERSION;
     }
 
@@ -240,7 +241,7 @@ dwarf_extract_proc_info_from_fde (unw_addr_space_t as, unw_accessors_t *a,
 
   if (u32val != 0xffffffff)
     {
-      int32_t cie_offset;
+      int32_t cie_offset = 0;
 
       /* In some configurations, an FDE with a 0 length indicates the
          end of the FDE-table.  */
@@ -270,7 +271,7 @@ dwarf_extract_proc_info_from_fde (unw_addr_space_t as, unw_accessors_t *a,
     }
   else
     {
-      int64_t cie_offset;
+      int64_t cie_offset = 0;
 
       /* the FDE is in the 64-bit DWARF format */
 
