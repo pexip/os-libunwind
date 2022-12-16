@@ -9,7 +9,7 @@ Homepage: http://www.nongnu.org/libunwind
 
 Package: libunwind-dev
 Section: libdevel
-Architecture: amd64 arm64 armel armhf hppa i386 ia64 mips mips64 mips64el mipsel powerpc powerpcspe ppc64 ppc64el sh4
+Architecture: amd64 arm64 armel armhf hppa i386 ia64 mips mips64 mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sh4
 Multi-Arch: same
 Depends: ${misc:Depends}, libunwind8 (= ${binary:Version}), liblzma-dev <!pkg.libunwind.nolzma>
 Conflicts: libunwind1-dev, libunwind7-dev
@@ -27,9 +27,9 @@ Description: library to determine the call-chain of a program - development
  This package includes the development support files. 
 
 Package: libunwind8
-Architecture: amd64 arm64 armel armhf hppa i386 ia64 mips mips64 mips64el mipsel powerpc powerpcspe ppc64 ppc64el sh4
+Architecture: amd64 arm64 armel armhf hppa i386 ia64 mips mips64 mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sh4
 Multi-Arch: same
-Pre-Depends:  ${misc:Pre-Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Conflicts: libunwind1-dev
 Replaces: libgcc1 (<< 1:4.0.0-2)
@@ -46,7 +46,7 @@ Description: library to determine the call-chain of a program - runtime
 
 Package: libunwind-setjmp0-dev
 Section: libdevel
-Architecture: amd64 arm64 armel armhf hppa i386 ia64 mips mips64 mips64el mipsel powerpc powerpcspe ppc64 ppc64el sh4
+Architecture: amd64 arm64 armel armhf hppa i386 ia64 mips mips64 mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sh4
 Depends: ${misc:Depends}, libunwind-dev (= ${binary:Version}), libunwind-setjmp0 (= ${binary:Version})
 Description: libunwind-based non local goto - development
  The unwind-setjmp library offers a libunwind-based implementation of
@@ -58,7 +58,7 @@ Description: libunwind-based non local goto - development
  This package includes the development support files
 
 Package: libunwind-setjmp0
-Architecture: amd64 arm64 armel armhf hppa i386 ia64 mips mips64 mips64el mipsel powerpc powerpcspe ppc64 ppc64el sh4
+Architecture: amd64 arm64 armel armhf hppa i386 ia64 mips mips64 mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sh4
 Pre-Depends:  ${misc:Pre-Depends}
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: libunwind-based non local goto - runtime

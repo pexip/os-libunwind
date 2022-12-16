@@ -1,14 +1,5 @@
-20140507-ppc_lib64.patch
-0001-aarch64-Use-__asm__-instead-of-asm-89.patch
-0001-Fix-compilation-with-fno-common.patch
-0001-Link-Ltest-cxx-exceptions-with-libunwind.patch
-0001-tests-Include-wait-related-headers-for-Ltest-mem-val.patch
-0001-fix-compile-issue-on-SH-platform-137.patch
+0001-Updated-to-determine-PAGE_SIZE-dynamically.patch
 
 # ia64
-libunwind-1.2-coredump-regs.patch
-libunwind-1.2-ia64-missing.patch
-libunwind-1.2-ia64-ptrace-coredump.patch
-0001-ia64-Fix-dyn_info_list.S-with-newer-binutils.patch
 0001-Gia64-test-nat.c-include-signal.h-for-sigaction.patch
 0001-Disable-Ltest-init-local-signal-on-ia64.patch
