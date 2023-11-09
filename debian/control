@@ -7,7 +7,7 @@ Build-Depends: debhelper-compat (= 10), liblzma-dev <!pkg.libunwind.nolzma>, tex
 Build-Conflicts: liblzma-dev <pkg.libunwind.nolzma>
 Standards-Version: 4.1.1
 Homepage: http://www.nongnu.org/libunwind
-XS-Pexip-Upstream: http://deb.debian.org/debian/ bullseye
+XS-Pexip-Upstream: http://deb.debian.org/debian/ bookworm
 
 Package: libunwind-dev
 Section: libdevel
