@@ -1,3 +1,9 @@
+libunwind (1.6.2-3+pexip24u3) pexip-bookworm; urgency=medium
+
+  * New versioning scheme
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Thu, 01 Feb 2024 16:08:01 +0000
+
 libunwind (1.6.2-3pexip2) pexip-bookworm; urgency=medium
 
   * Bookworm build for product distribution
