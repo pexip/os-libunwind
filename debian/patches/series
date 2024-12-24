@@ -1,5 +1,1 @@
-0001-Updated-to-determine-PAGE_SIZE-dynamically.patch
-
-# ia64
-0001-Gia64-test-nat.c-include-signal.h-for-sigaction.patch
-0001-Disable-Ltest-init-local-signal-on-ia64.patch
+0001-Fixed-miscompilation-of-unw_getcontext-on-ARM.patch
